@@ -1,0 +1,17 @@
+ class Solution:
+    def countSubarrays(self, nums, bound):
+        count = 0
+        curr = 0
+        
+        for num in nums:
+            if num <= bound:
+                curr += 1
+            else:
+                curr = 0
+            count += curr
+        
+        return count
+
+    def numSubarrayBoundedMax(self, nums, left, right):
+        return self.countSubarrays(nums, right) - self.countSubarrays(nums, left - 1)
+        
