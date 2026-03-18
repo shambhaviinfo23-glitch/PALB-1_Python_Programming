@@ -1,0 +1,3 @@
+class Solution:
+    def findUnion(self, arr1, arr2):
+        return sorted(set(arr1).union(set(arr2)))
